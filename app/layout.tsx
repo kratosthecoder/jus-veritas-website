@@ -18,14 +18,14 @@ const sans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Jus Veritas Associates LLP | Advocates in New Delhi",
+  title: "Jus Veritas Associates LLP | Registrations, Compliance & GST Filing",
   description:
-    "Jus Veritas Associates LLP, a Delhi law firm handling civil, criminal, matrimonial and commercial matters, with GST, ITR and company registration services.",
+    "Jus Veritas Associates LLP, a New Delhi based firm handling company registration, GST, income tax filing, licensing and ongoing statutory compliance for individuals and businesses.",
 };
 
-const legalServiceJsonLd = {
+const professionalServiceJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LegalService",
+  "@type": "ProfessionalService",
   name: firm.name,
   address: {
     "@type": "PostalAddress",
@@ -69,7 +69,7 @@ export default function RootLayout({
       <body className="font-sans">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceJsonLd) }}
         />
         {children}
       </body>

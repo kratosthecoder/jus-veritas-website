@@ -9,16 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: "#1A365D",
-          light: "#2C4A73",
-          dark: "#122544",
+        ink: {
+          DEFAULT: "var(--ink)",
+          soft: "var(--ink-soft)",
         },
-        parchment: "#FAFAF8",
-        charcoal: "#212529",
-        gold: {
-          DEFAULT: "#B8860B",
-          light: "#D4A017",
+        accent: {
+          DEFAULT: "var(--accent)",
+          dark: "var(--accent-dark)",
+        },
+        gold: "var(--gold)",
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        border: "var(--border)",
+        text: {
+          DEFAULT: "var(--text)",
+          muted: "var(--text-muted)",
         },
       },
       fontFamily: {
@@ -26,7 +31,11 @@ const config: Config = {
         sans: ["var(--font-sans)", "Arial", "sans-serif"],
       },
       maxWidth: {
-        content: "1280px",
+        content: "1200px",
+      },
+      borderRadius: {
+        card: "12px",
+        btn: "8px",
       },
     },
   },

@@ -41,7 +41,7 @@ export default function EnquiryForm() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
       next.email = "Please enter a valid email address.";
     }
-    if (!values.interest) next.interest = "Please select an area of interest.";
+    if (!values.interest) next.interest = "Please select a service.";
     if (!values.message.trim()) next.message = "Please add a brief message.";
     if (!values.consent) next.consent = "Consent is required before this form can be submitted.";
     return next;
@@ -58,26 +58,26 @@ export default function EnquiryForm() {
   }
 
   const inputClasses =
-    "mt-1.5 w-full rounded-sm border border-navy/20 bg-white px-3.5 py-2.5 text-sm text-charcoal placeholder:text-charcoal/40 focus:border-navy focus:outline-none";
+    "mt-1.5 w-full rounded-btn border border-border bg-surface px-3.5 py-2.5 text-sm text-text placeholder:text-text-muted/60 focus:border-accent focus:outline-none";
 
   return (
-    <section aria-labelledby="enquiry-heading" className="bg-navy">
-      <div className="mx-auto max-w-content px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section aria-labelledby="enquiry-heading" className="bg-ink">
+      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
-          <h2 id="enquiry-heading" className="text-center font-serif text-2xl font-semibold text-parchment sm:text-3xl">
-            Send an Enquiry
+          <h2 id="enquiry-heading" className="text-center font-serif text-3xl font-semibold tracking-tight text-white">
+            Get Started Today
           </h2>
-          <p className="mt-3 text-center text-sm text-parchment/70">
-            Share a few details and our office will get in touch to arrange a
-            time to discuss your matter.
+          <p className="mt-3 text-center text-sm text-white/70">
+            Share a few details and our team will get in touch to take your
+            filing forward.
           </p>
 
           {submitted && (
             <div
               role="status"
-              className="mt-8 rounded-md border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-parchment"
+              className="mt-8 rounded-card border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-white"
             >
-              Thank you. Your enquiry has been received and our office will
+              Thank you. Your enquiry has been received and our team will
               contact you shortly.
             </div>
           )}
@@ -85,11 +85,11 @@ export default function EnquiryForm() {
           <form
             noValidate
             onSubmit={handleSubmit}
-            className="mt-8 rounded-md bg-parchment p-6 shadow-md sm:p-8"
+            className="mt-8 rounded-card bg-surface p-6 sm:p-8"
           >
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="text-sm font-medium text-charcoal">
+                <label htmlFor="name" className="text-sm font-medium text-text">
                   Name
                 </label>
                 <input
@@ -110,7 +110,7 @@ export default function EnquiryForm() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="text-sm font-medium text-charcoal">
+                <label htmlFor="phone" className="text-sm font-medium text-text">
                   Phone
                 </label>
                 <input
@@ -131,7 +131,7 @@ export default function EnquiryForm() {
               </div>
 
               <div className="sm:col-span-2">
-                <label htmlFor="email" className="text-sm font-medium text-charcoal">
+                <label htmlFor="email" className="text-sm font-medium text-text">
                   Email
                 </label>
                 <input
@@ -152,8 +152,8 @@ export default function EnquiryForm() {
               </div>
 
               <div className="sm:col-span-2">
-                <label htmlFor="interest" className="text-sm font-medium text-charcoal">
-                  Service / Area of Interest
+                <label htmlFor="interest" className="text-sm font-medium text-text">
+                  Service of Interest
                 </label>
                 <select
                   id="interest"
@@ -179,7 +179,7 @@ export default function EnquiryForm() {
               </div>
 
               <div className="sm:col-span-2">
-                <label htmlFor="message" className="text-sm font-medium text-charcoal">
+                <label htmlFor="message" className="text-sm font-medium text-text">
                   Message
                 </label>
                 <textarea
@@ -207,11 +207,11 @@ export default function EnquiryForm() {
                     type="checkbox"
                     checked={form.consent}
                     onChange={(e) => setForm({ ...form, consent: e.target.checked })}
-                    className="mt-1 h-4 w-4 shrink-0 rounded-sm border-navy/40 text-navy focus:ring-navy"
+                    className="mt-1 h-4 w-4 shrink-0 rounded-sm border-border text-accent focus:ring-accent"
                     aria-invalid={Boolean(errors.consent)}
                     aria-describedby={errors.consent ? "consent-error" : undefined}
                   />
-                  <label htmlFor="consent" className="text-xs leading-relaxed text-charcoal/80">
+                  <label htmlFor="consent" className="text-xs leading-relaxed text-text-muted">
                     {consentText}
                   </label>
                 </div>
@@ -225,7 +225,7 @@ export default function EnquiryForm() {
 
             <button
               type="submit"
-              className="mt-7 w-full rounded-sm bg-navy px-6 py-3 text-sm font-medium text-parchment transition-colors hover:bg-navy-dark sm:w-auto"
+              className="mt-7 w-full rounded-btn bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dark sm:w-auto"
             >
               Submit Enquiry
             </button>

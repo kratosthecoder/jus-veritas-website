@@ -2,16 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ink: #0f2436;
+  --ink-soft: #1c3a52;
+  --accent: #147c5a;
+  --accent-dark: #0e5f45;
+  --gold: #b98a2e;
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --border: #e4e2dc;
+  --text: #1a1a18;
+  --text-muted: #5f5e58;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-parchment text-charcoal antialiased;
+    @apply bg-bg text-text antialiased;
   }
 
   :focus-visible {
-    @apply outline outline-2 outline-offset-2 outline-gold;
+    @apply outline outline-2 outline-offset-2 outline-accent;
   }
 }

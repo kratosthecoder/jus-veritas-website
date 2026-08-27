@@ -1,10 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import TwoTrackSplit from "@/components/TwoTrackSplit";
-import CredentialsBar from "@/components/CredentialsBar";
-import PracticeAreasGrid from "@/components/PracticeAreasGrid";
-import ComplianceServicesGrid from "@/components/ComplianceServicesGrid";
-import KnowledgeCentrePreview from "@/components/KnowledgeCentrePreview";
+import CategoryCards from "@/components/CategoryCards";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import HowItWorks from "@/components/HowItWorks";
+import IndustriesStrip from "@/components/IndustriesStrip";
+import FAQ from "@/components/FAQ";
 import EnquiryForm from "@/components/EnquiryForm";
 import Footer from "@/components/Footer";
 
@@ -14,11 +14,11 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <TwoTrackSplit />
-        <CredentialsBar />
-        <PracticeAreasGrid />
-        <ComplianceServicesGrid />
-        <KnowledgeCentrePreview />
+        <CategoryCards />
+        <WhyChooseUs />
+        <HowItWorks />
+        <IndustriesStrip />
+        <FAQ />
         <EnquiryForm />
       </main>
       <Footer />

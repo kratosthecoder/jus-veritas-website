@@ -1,4 +1,8 @@
-// Central copy store for the homepage. Edit text here without touching layout/component code.
+// Central copy store for the homepage, header and footer.
+// Menu/category data lives in lib/services.ts — this file holds firm details,
+// page copy and the smaller content blocks (FAQ, how-it-works, trust points).
+
+import { menuCategories } from "@/lib/services";
 
 export const firm = {
   name: "Jus Veritas Associates LLP",
@@ -18,194 +22,96 @@ export const firm = {
 };
 
 export const nav = {
-  practiceAreas: { label: "Practice Areas", href: "/practice-areas" },
-  services: { label: "Services", href: "/services" },
-  knowledge: { label: "Knowledge", href: "/knowledge" },
-  about: { label: "About", href: "/about" },
   contact: { label: "Contact", href: "/contact" },
 };
 
-export type PracticeArea = {
-  slug: string;
-  name: string;
-  description: string;
+export const hero = {
+  headline: "Registrations, Compliance and Tax Filing, Handled End to End",
+  subheadline:
+    "Company registration, GST, income tax and licensing services for individuals and businesses, managed by one team from start to finish.",
+  primaryCta: { label: "Get Started", href: "/get-started" },
+  secondaryCta: { label: "Talk to an Expert", href: "/contact" },
 };
 
-export const practiceAreas: PracticeArea[] = [
+export const whyChooseUs = [
   {
-    slug: "civil-litigation",
-    name: "Civil Litigation",
-    description:
-      "Representation in civil suits before District Courts, High Courts and appellate forums.",
+    title: "One Point of Contact",
+    description: "A single team follows your filing from submission through to completion.",
   },
   {
-    slug: "criminal-law",
-    name: "Criminal Law",
-    description:
-      "Defence and complainant representation in criminal proceedings, including bail and trial matters.",
+    title: "Transparent Pricing",
+    description: "Package pricing shown upfront, with no hidden charges added later.",
   },
   {
-    slug: "matrimonial-family-law",
-    name: "Matrimonial & Family Law",
-    description:
-      "Matters relating to divorce, maintenance, custody and family settlements.",
+    title: "Filing Accuracy",
+    description: "Documentation checked against current statutory requirements before submission.",
   },
   {
-    slug: "commercial-disputes",
-    name: "Commercial Disputes",
-    description:
-      "Contractual and business disputes before civil courts and commercial courts.",
-  },
-  {
-    slug: "arbitration",
-    name: "Arbitration",
-    description:
-      "Representation in domestic arbitration proceedings under the Arbitration and Conciliation Act.",
-  },
-  {
-    slug: "consumer-cases",
-    name: "Consumer Cases",
-    description:
-      "Complaints and representation before District, State and National Consumer Commissions.",
-  },
-  {
-    slug: "constitutional-matters",
-    name: "Constitutional Matters",
-    description:
-      "Writ petitions and constitutional remedies before the High Court and Supreme Court.",
-  },
-  {
-    slug: "intellectual-property",
-    name: "Intellectual Property",
-    description:
-      "Advisory and enforcement matters relating to trademarks, copyright and related rights.",
-  },
-  {
-    slug: "real-estate-property-law",
-    name: "Real Estate & Property Law",
-    description:
-      "Title matters, property disputes and documentation relating to immovable property.",
+    title: "Timely Reminders",
+    description: "Advance reminders for recurring filings and renewal deadlines.",
   },
 ];
 
-export type ComplianceService = {
-  slug: string;
-  name: string;
-  description: string;
-  priceFrom: string; // rupee figure, marked [CONFIRM] where a real figure is needed
-};
-
-export const complianceServices: ComplianceService[] = [
+export const howItWorks = [
   {
-    slug: "gst-registration",
-    name: "GST Registration",
-    description: "New GST registration for businesses and professionals.",
-    priceFrom: "1,999", // [CONFIRM]
+    step: 1,
+    title: "Share Your Requirement",
+    description: "Tell us what you need — a registration, a filing or a licence.",
   },
   {
-    slug: "gst-return-filing",
-    name: "GST Return Filing",
-    description: "Monthly and quarterly GST return filing and reconciliation.",
-    priceFrom: "999", // [CONFIRM]
+    step: 2,
+    title: "Document Collection",
+    description: "We share a checklist and collect the documents needed for your filing.",
   },
   {
-    slug: "income-tax-return-filing",
-    name: "Income Tax Return Filing",
-    description: "ITR preparation and filing for individuals and businesses.",
-    priceFrom: "1,499", // [CONFIRM]
+    step: 3,
+    title: "Preparation & Filing",
+    description: "Your application or return is prepared, reviewed and filed with the relevant authority.",
   },
   {
-    slug: "company-registration",
-    name: "Company Registration",
-    description: "Private limited company incorporation, start to finish.",
-    priceFrom: "6,999", // [CONFIRM]
-  },
-  {
-    slug: "llp-registration",
-    name: "LLP Registration",
-    description: "Limited Liability Partnership formation and documentation.",
-    priceFrom: "5,999", // [CONFIRM]
-  },
-  {
-    slug: "trademark-registration",
-    name: "Trademark Registration",
-    description: "Trademark search, application filing and prosecution support.",
-    priceFrom: "4,999", // [CONFIRM]
-  },
-  {
-    slug: "roc-annual-compliance",
-    name: "ROC Annual Compliance",
-    description: "Annual filings and statutory compliance for companies and LLPs.",
-    priceFrom: "3,999", // [CONFIRM]
-  },
-  {
-    slug: "tds-return-filing",
-    name: "TDS Return Filing",
-    description: "Quarterly TDS return preparation and filing.",
-    priceFrom: "1,499", // [CONFIRM]
+    step: 4,
+    title: "Confirmation & Records",
+    description: "You receive the filed acknowledgement and copies of all records for your files.",
   },
 ];
 
-export const credentials = [
-  `Established practice since ${firm.established}`,
-  firm.name,
-  `${firm.addressLine1}, ${firm.city}`,
-  "Advocates enrolled with the Bar Council of Delhi",
-];
+export type FaqItem = { question: string; answer: string };
 
-export type Article = {
-  slug: string;
-  title: string;
-  category: string;
-  date: string;
-  excerpt: string;
-};
-
-export const articles: Article[] = [
+export const faqs: FaqItem[] = [
   {
-    slug: "gst-return-filing-deadlines",
-    title: "Understanding GST Return Filing Deadlines for FY 2025-26",
-    category: "Compliance",
-    date: "2026-07-14",
-    excerpt:
-      "A summary of monthly and quarterly GST filing timelines and the penalties that apply for late filing.",
+    question: "How long does company registration take?",
+    answer:
+      "Timelines depend on document readiness and processing times at the Ministry of Corporate Affairs, typically ranging from a few days to a few weeks.",
   },
   {
-    slug: "maintenance-under-hindu-marriage-act",
-    title: "Maintenance Provisions Under the Hindu Marriage Act: An Overview",
-    category: "Matrimonial & Family Law",
-    date: "2026-06-30",
-    excerpt:
-      "A general overview of interim and permanent maintenance provisions available to parties in matrimonial proceedings.",
+    question: "Do I need a registered office to register a company?",
+    answer:
+      "Yes, a registered office address in India is required at the time of incorporation and for ongoing compliance.",
   },
   {
-    slug: "llp-vs-private-limited",
-    title: "LLP or Private Limited Company: Points to Consider",
-    category: "Compliance",
-    date: "2026-06-10",
-    excerpt:
-      "A comparison of registration requirements, compliance burden and liability structure for new businesses.",
+    question: "How often do I need to file GST returns?",
+    answer:
+      "Filing frequency depends on the GST scheme you are registered under — monthly, quarterly or annual filings may apply.",
+  },
+  {
+    question: "What happens if I miss a compliance deadline?",
+    answer:
+      "Late filings can attract penalties and interest depending on the filing type. We send advance reminders to help you avoid this.",
+  },
+  {
+    question: "Can you handle compliance for a company already registered elsewhere?",
+    answer:
+      "Yes, we take on ongoing compliance, filings and licensing for existing companies and LLPs.",
+  },
+  {
+    question: "Is pricing fixed or does it vary by case?",
+    answer:
+      "We quote package pricing upfront for standard filings; matters requiring additional work are quoted separately before we proceed.",
   },
 ];
 
 export const enquiryInterests = [
-  "Civil Litigation",
-  "Criminal Law",
-  "Matrimonial & Family Law",
-  "Commercial Disputes",
-  "Arbitration",
-  "Consumer Cases",
-  "Constitutional Matters",
-  "Intellectual Property",
-  "Real Estate & Property Law",
-  "GST Registration",
-  "GST Return Filing",
-  "Income Tax Return Filing",
-  "Company Registration",
-  "LLP Registration",
-  "Trademark Registration",
-  "ROC Annual Compliance",
-  "TDS Return Filing",
+  ...menuCategories.map((category) => category.label),
   "Other",
 ];
 
@@ -213,17 +119,12 @@ export const consentText =
   "I consent to Jus Veritas Associates LLP collecting my name, phone number and email address for the purpose of responding to this enquiry. I have read the Privacy Policy and understand I may withdraw consent at any time.";
 
 export const footerLinks = {
-  practiceAreas: practiceAreas.slice(0, 6).map((p) => ({
-    label: p.name,
-    href: `/practice-areas/${p.slug}`,
-  })),
-  services: complianceServices.slice(0, 6).map((s) => ({
-    label: s.name,
-    href: `/services/${s.slug}`,
+  explore: menuCategories.map((category) => ({
+    label: category.label,
+    href: category.href,
   })),
   firm: [
     { label: "About", href: "/about" },
-    { label: "Knowledge Centre", href: "/knowledge" },
     { label: "Contact", href: "/contact" },
   ],
   legal: [
