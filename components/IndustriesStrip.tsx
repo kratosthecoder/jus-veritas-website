@@ -7,9 +7,9 @@ export default function IndustriesStrip() {
 
   return (
     <section aria-labelledby="industries-heading" className="bg-bg">
-      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 id="industries-heading" className="font-serif text-3xl font-semibold tracking-tight text-ink">
+          <h2 id="industries-heading" className="font-serif text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
             Industries We Serve
           </h2>
           <p className="mt-3 text-text-muted">{industries.description}</p>
@@ -20,7 +20,7 @@ export default function IndustriesStrip() {
             <li key={group.slug}>
               <Link
                 href={group.href}
-                className="inline-flex items-center rounded-full border border-border bg-surface px-4 py-2 text-sm text-text transition-colors hover:border-accent hover:text-accent"
+                className="inline-flex items-center rounded-full border border-border bg-surface px-4 py-2 text-sm text-text transition-colors hover:border-ink hover:text-ink"
               >
                 {group.label}
               </Link>

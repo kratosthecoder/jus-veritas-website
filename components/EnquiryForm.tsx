@@ -58,16 +58,16 @@ export default function EnquiryForm() {
   }
 
   const inputClasses =
-    "mt-1.5 w-full rounded-btn border border-border bg-surface px-3.5 py-2.5 text-sm text-text placeholder:text-text-muted/60 focus:border-accent focus:outline-none";
+    "mt-1.5 w-full rounded-btn border border-border bg-surface px-3.5 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-gold focus:outline-none";
 
   return (
     <section aria-labelledby="enquiry-heading" className="bg-ink">
-      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-2xl">
-          <h2 id="enquiry-heading" className="text-center font-serif text-3xl font-semibold tracking-tight text-white">
+          <h2 id="enquiry-heading" className="text-center font-serif text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
             Get Started Today
           </h2>
-          <p className="mt-3 text-center text-sm text-white/70">
+          <p className="mt-3 text-center text-sm text-dark-body">
             Share a few details and our team will get in touch to take your
             filing forward.
           </p>
@@ -75,7 +75,7 @@ export default function EnquiryForm() {
           {submitted && (
             <div
               role="status"
-              className="mt-8 rounded-card border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-white"
+              className="mt-8 rounded-card border border-ink-soft bg-ink-soft px-4 py-3 text-sm text-white"
             >
               Thank you. Your enquiry has been received and our team will
               contact you shortly.
@@ -207,7 +207,7 @@ export default function EnquiryForm() {
                     type="checkbox"
                     checked={form.consent}
                     onChange={(e) => setForm({ ...form, consent: e.target.checked })}
-                    className="mt-1 h-4 w-4 shrink-0 rounded-sm border-border text-accent focus:ring-accent"
+                    className="mt-1 h-4 w-4 shrink-0 rounded-sm border-border text-gold focus:ring-gold"
                     aria-invalid={Boolean(errors.consent)}
                     aria-describedby={errors.consent ? "consent-error" : undefined}
                   />
@@ -225,7 +225,7 @@ export default function EnquiryForm() {
 
             <button
               type="submit"
-              className="mt-7 w-full rounded-btn bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dark sm:w-auto"
+              className="mt-7 w-full rounded-btn bg-gold px-6 py-3 text-sm font-medium text-btn-primary-text transition hover:brightness-95 sm:w-auto"
             >
               Submit Enquiry
             </button>

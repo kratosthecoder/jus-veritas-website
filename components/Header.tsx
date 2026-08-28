@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { firm, hero } from "@/lib/data/homepage";
 import { menuCategories } from "@/lib/services";
@@ -10,10 +11,20 @@ export default function Header() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-border bg-surface">
       <div className="mx-auto flex max-w-content items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="font-serif text-xl font-semibold text-ink sm:text-2xl">
-          {firm.shortName}
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Jus Veritas Associates LLP logo"
+            width={176}
+            height={176}
+            className="h-9 w-9 lg:h-11 lg:w-11"
+            priority
+          />
+          <span className="font-serif text-xl font-semibold text-ink sm:text-2xl">
+            {firm.shortName}
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 xl:flex">
@@ -26,7 +37,7 @@ export default function Header() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1 rounded-btn px-3 py-2 text-sm font-medium text-text hover:text-accent"
+                className="flex items-center gap-1 rounded-btn px-3 py-2 text-sm font-medium text-text hover:text-ink"
                 aria-expanded={openCategory === category.slug}
                 aria-haspopup="true"
                 onClick={() =>
@@ -39,7 +50,7 @@ export default function Header() {
 
               {openCategory === category.slug && (
                 <div className="absolute left-1/2 top-full w-[640px] -translate-x-1/2 rounded-card border border-border bg-surface p-6">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-text-muted">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold">
                     {category.label}
                   </p>
                   <p className="mt-1 text-sm text-text-muted">{category.description}</p>
@@ -48,7 +59,7 @@ export default function Header() {
                       <Link
                         key={group.slug}
                         href={group.href}
-                        className="text-sm text-text hover:text-accent"
+                        className="text-sm text-text hover:text-ink"
                       >
                         {group.label}
                       </Link>
@@ -56,7 +67,7 @@ export default function Header() {
                   </div>
                   <Link
                     href={category.href}
-                    className="mt-5 inline-block border-t border-border pt-4 text-sm font-medium text-accent"
+                    className="mt-5 inline-block border-t border-border pt-4 text-sm font-medium text-ink hover:underline"
                   >
                     View all {category.label.toLowerCase()} services
                   </Link>
@@ -67,12 +78,12 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-5 xl:flex">
-          <a href={`tel:+91${firm.phone}`} className="text-sm font-medium text-ink hover:text-accent">
+          <a href={`tel:+91${firm.phone}`} className="text-sm font-medium text-ink hover:text-ink-soft">
             {firm.phoneDisplay}
           </a>
           <Link
             href={hero.primaryCta.href}
-            className="inline-flex items-center justify-center rounded-btn bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
+            className="inline-flex items-center justify-center rounded-btn bg-gold px-5 py-2.5 text-sm font-medium text-btn-primary-text transition hover:brightness-95"
           >
             {hero.primaryCta.label}
           </Link>
@@ -115,7 +126,7 @@ export default function Header() {
             </a>
             <Link
               href={hero.primaryCta.href}
-              className="mt-2 inline-flex items-center justify-center rounded-btn bg-accent px-5 py-2.5 text-sm font-medium text-white"
+              className="mt-2 inline-flex items-center justify-center rounded-btn bg-gold px-5 py-2.5 text-sm font-medium text-btn-primary-text"
               onClick={() => setMobileOpen(false)}
             >
               {hero.primaryCta.label}

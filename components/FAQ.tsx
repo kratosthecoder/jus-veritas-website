@@ -8,9 +8,9 @@ export default function FAQ() {
 
   return (
     <section aria-labelledby="faq-heading" className="bg-surface">
-      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 id="faq-heading" className="font-serif text-3xl font-semibold tracking-tight text-ink">
+          <h2 id="faq-heading" className="font-serif text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
             Frequently Asked Questions
           </h2>
         </div>

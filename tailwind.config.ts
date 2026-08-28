@@ -13,11 +13,10 @@ const config: Config = {
           DEFAULT: "var(--ink)",
           soft: "var(--ink-soft)",
         },
-        accent: {
-          DEFAULT: "var(--accent)",
-          dark: "var(--accent-dark)",
+        gold: {
+          DEFAULT: "var(--gold)",
+          bright: "var(--gold-bright)",
         },
-        gold: "var(--gold)",
         bg: "var(--bg)",
         surface: "var(--surface)",
         border: "var(--border)",
@@ -25,6 +24,10 @@ const config: Config = {
           DEFAULT: "var(--text)",
           muted: "var(--text-muted)",
         },
+        "footer-bg": "var(--footer-bg)",
+        "btn-primary-text": "var(--btn-primary-text)",
+        "dark-body": "var(--dark-body)",
+        "copyright-text": "var(--copyright-text)",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Georgia", "serif"],

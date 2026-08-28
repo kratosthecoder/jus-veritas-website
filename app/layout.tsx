@@ -18,7 +18,7 @@ const sans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Jus Veritas Associates LLP | Registrations, Compliance & GST Filing",
+  title: "Jus Veritas Associates LLP",
   description:
     "Jus Veritas Associates LLP, a New Delhi based firm handling company registration, GST, income tax filing, licensing and ongoing statutory compliance for individuals and businesses.",
 };

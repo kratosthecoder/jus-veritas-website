@@ -3,9 +3,9 @@ import { whyChooseUs } from "@/lib/data/homepage";
 export default function WhyChooseUs() {
   return (
     <section aria-labelledby="why-choose-us-heading" className="bg-bg">
-      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 id="why-choose-us-heading" className="font-serif text-3xl font-semibold tracking-tight text-ink">
+          <h2 id="why-choose-us-heading" className="font-serif text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
             Why Choose Us
           </h2>
         </div>

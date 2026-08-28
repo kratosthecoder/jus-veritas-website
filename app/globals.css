@@ -3,16 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --ink: #0f2436;
-  --ink-soft: #1c3a52;
-  --accent: #147c5a;
-  --accent-dark: #0e5f45;
-  --gold: #b98a2e;
-  --bg: #fafaf8;
+  --ink: #0b1622;
+  --ink-soft: #16293d;
+  --gold: #b8892b;
+  --gold-bright: #e0a93c;
+  --bg: #fbfaf8;
   --surface: #ffffff;
-  --border: #e4e2dc;
-  --text: #1a1a18;
-  --text-muted: #5f5e58;
+  --border: #e6e3dc;
+  --text: #131820;
+  --text-muted: #5a6270;
+  --footer-bg: #f3f1ec;
+
+  /* Exact usage-rule colours from the brand spec, tied to specific roles
+     rather than free-standing brand tokens. */
+  --btn-primary-text: #1a1200;
+  --dark-body: #9aa4b2;
+  --copyright-text: #8a93a0;
 }
 
 @layer base {
@@ -22,9 +28,10 @@
 
   body {
     @apply bg-bg text-text antialiased;
+    line-height: 1.7;
   }
 
   :focus-visible {
-    @apply outline outline-2 outline-offset-2 outline-accent;
+    @apply outline outline-2 outline-offset-2 outline-gold;
   }
 }

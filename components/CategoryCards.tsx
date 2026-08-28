@@ -4,9 +4,9 @@ import { menuCategories } from "@/lib/services";
 export default function CategoryCards() {
   return (
     <section aria-labelledby="categories-heading" className="bg-surface">
-      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 id="categories-heading" className="font-serif text-3xl font-semibold tracking-tight text-ink">
+          <h2 id="categories-heading" className="font-serif text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
             Everything Filed in One Place
           </h2>
           <p className="mt-3 text-text-muted">
@@ -20,11 +20,11 @@ export default function CategoryCards() {
             <Link
               key={category.slug}
               href={category.href}
-              className="flex flex-col rounded-card border border-border bg-surface p-6 transition-colors hover:border-accent"
+              className="flex flex-col rounded-card border border-border bg-surface p-6 transition-colors hover:border-ink"
             >
-              <h3 className="font-serif text-lg font-semibold text-ink">{category.label}</h3>
+              <h3 className="font-serif text-xl font-semibold text-ink">{category.label}</h3>
               <p className="mt-2 text-sm text-text-muted">{category.description}</p>
-              <span className="mt-4 text-sm font-medium text-accent">Explore {category.label}</span>
+              <span className="mt-4 text-sm font-medium text-ink">Explore {category.label}</span>
             </Link>
           ))}
         </div>
